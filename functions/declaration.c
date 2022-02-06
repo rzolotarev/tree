@@ -1,11 +1,12 @@
+#include "declaration.h"
 #include <stdio.h>
 
-int sum(int x, int y)
+static int sum(int x, int y)
 {
     return x + y;
 }
 
-int substract(int x, int y)
+static int substract(int x, int y)
 {
     return x - y;
 }
@@ -19,11 +20,3 @@ int (*funret(int x))(int,int)
         return substract;
     return sum;
 }
-
-int main()
-{
-    int (*fnc)(int,int) = funret(2);
-    printf("%d output", fnc(10,1));
-    return 0;
-}
-

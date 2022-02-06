@@ -1,11 +1,7 @@
 
+#include "declaration.h"
 #include <stdio.h>
 #include <stdlib.h>
-struct item
-{
-    int data;
-    struct item* next;
-};
 
 void delete_from_int_list(struct item **pcur, int (*crit)(int));
 int is_negative(int x) 
