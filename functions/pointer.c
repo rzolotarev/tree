@@ -1,15 +1,14 @@
 
-#include "declaration.h"
+#include "pointer.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-void delete_from_int_list(struct item **pcur, int (*crit)(int));
-int is_negative(int x) 
+static int is_negative(int x) 
 {
     return x < 0;
 }
 
-void traverse(struct item *current)
+static void traverse(struct item *current)
 {
     while(current) {
         printf("%d value\n", current->data);
@@ -17,7 +16,7 @@ void traverse(struct item *current)
     }
 }
 
-int main()
+void show_linked_list()
 {
     struct item *m1 = malloc(sizeof(struct item));
     m1->data = 5;
